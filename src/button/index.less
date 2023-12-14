@@ -1,0 +1,33 @@
+@import url(../styles/index.less);
+
+@prefix: ~'yr';
+
+.@{prefix}-button {
+  padding: 0 8px;
+  height: 30px;
+  outline: 1px solid @white-10;
+  color: @black;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 2px;
+  transition: all .3s;
+  user-select: none;
+  cursor: pointer;
+}
+
+.@{prefix}-default {
+  outline: 1px solid @black-10;
+}
+
+.@{prefix}-primary {
+  background: @primary;
+  color: @white;
+
+  &:hover {
+    background-color: @primary-90;
+  }
+
+  &:active {
+    background-color: @primary-80;
+  }
+}
