@@ -12,5 +12,5 @@
       "my-design/*": ["src/*", "*"]
     }
   },
-  "include": [".dumirc.ts", "src/**/*"]
+  "include": [".dumirc.ts", "src/**/*", "typings.d.ts"]
 }

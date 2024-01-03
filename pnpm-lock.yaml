@@ -1821,7 +1821,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.2
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.6
       hoist-non-react-statics: registry.npmmirror.com/hoist-non-react-statics@3.3.2
       react: registry.npmmirror.com/react@18.1.0
       react-is: registry.npmmirror.com/react-is@16.13.1
@@ -1836,7 +1836,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.2
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.6
       hoist-non-react-statics: registry.npmmirror.com/hoist-non-react-statics@3.3.2
       react: registry.npmmirror.com/react@18.2.0
       react-is: registry.npmmirror.com/react-is@16.13.1
@@ -3207,7 +3207,7 @@ packages:
     name: '@umijs/history'
     version: 5.3.1
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.2
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.6
       query-string: registry.npmmirror.com/query-string@6.14.1
     dev: true
 
@@ -7897,7 +7897,7 @@ packages:
     name: history
     version: 5.3.0
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.2
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.6
     dev: true
 
   registry.npmmirror.com/hmac-drbg@1.0.1:
@@ -12688,7 +12688,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.2
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.6
       invariant: registry.npmmirror.com/invariant@2.2.4
       prop-types: registry.npmmirror.com/prop-types@15.8.1
       react: registry.npmmirror.com/react@18.1.0
@@ -12706,7 +12706,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.2
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.23.6
       invariant: registry.npmmirror.com/invariant@2.2.4
       prop-types: registry.npmmirror.com/prop-types@15.8.1
       react: registry.npmmirror.com/react@18.2.0

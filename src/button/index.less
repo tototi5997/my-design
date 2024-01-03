@@ -1,22 +1,49 @@
 @import url(../styles/index.less);
 
-@prefix: ~'yr';
+@prefix: ~'my';
 
 .@{prefix}-button {
   padding: 0 8px;
   height: 30px;
-  outline: 1px solid @white-10;
+  width: max-content;
+  outline: 1px solid @black-10;
   color: @black;
+  font-size: 14px;
   line-height: 30px;
   text-align: center;
   border-radius: 2px;
   transition: all .3s;
   user-select: none;
+  box-shadow: 0 2px #00000004;
   cursor: pointer;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  & svg {
+    width: 14px;
+    height: 14px;
+    animation: loadingCicrle 1s infinite linear;
+  }
+}
+
+.@{prefix}-single {
+  box-shadow: none;
 }
 
 .@{prefix}-default {
   outline: 1px solid @black-10;
+  background-color: @white-20;
+
+  &:active {
+    background-color: @white-10;
+  }
+
+  &:hover {
+    color: @primary-80;
+    outline: 1px solid @primary-20;
+  }
 }
 
 .@{prefix}-primary {
@@ -29,5 +56,11 @@
 
   &:active {
     background-color: @primary-80;
+  }
+}
+
+@keyframes loadingCicrle {
+  100% {
+    transform: rotate(360deg);
   }
 }

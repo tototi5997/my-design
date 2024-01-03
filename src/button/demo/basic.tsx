@@ -4,8 +4,9 @@ import React from 'react';
 const Basic = () => {
   return (
     <div style={{ display: 'flex', gap: 10 }}>
-      <Button type="default">Default</Button>
-      <Button type="primary">Primary Button</Button>
+      <Button type="default">default</Button>
+      <Button type="primary">primary button</Button>
+      <Button type="single">ghost</Button>
     </div>
   );
 };

@@ -13,4 +13,5 @@ export default defineConfig({
     footer: false, // 页脚
   },
   favicons: ['/logo.svg'],
+  svgr: {},
 });
