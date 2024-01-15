@@ -12,6 +12,10 @@ interface IButton {
    */
   type?: IButtonType;
   /**
+   * @description 自定义类名
+   */
+  className?: string;
+  /**
    * @description 子节点
    */
   children?: React.ReactNode;
@@ -43,6 +47,7 @@ const Button: React.FC<IButton> = (props) => {
     onClick = () => {},
     onDoubleClick = () => {},
     loading = false,
+    className,
   } = props;
 
   const CLS_PRE = 'my';
@@ -50,7 +55,7 @@ const Button: React.FC<IButton> = (props) => {
 
   return (
     <div
-      className={c(`${CLS_PRE}-button`, typeClass)}
+      className={c(`${CLS_PRE}-button`, className, typeClass)}
       onClick={onClick}
       onDoubleClick={onDoubleClick}
     >
