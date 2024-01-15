@@ -14,4 +14,9 @@ export default defineConfig({
   },
   favicons: ['/logo.svg'],
   svgr: {},
+  lessLoader: {
+    modifyVars: {
+      hack: `true; @import "~@/styles/index.less";`,
+    },
+  },
 });

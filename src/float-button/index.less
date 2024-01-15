@@ -1,0 +1,22 @@
+.my-float-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  background-color: #fff;
+  box-shadow: @box-shadow-2;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all @duration;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 6%);
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
