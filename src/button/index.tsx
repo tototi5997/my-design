@@ -37,6 +37,15 @@ interface IButton {
    * @description 双击按钮时的回调
    */
   onDoubleClick?: () => void;
+  /**
+   * @description 是否禁用
+   * @default false
+   */
+  disabled?: boolean;
+  /**
+   * @description 按钮图标
+   */
+  icon?: React.ReactNode;
 }
 
 const Button: React.FC<IButton> = (props) => {
@@ -48,18 +57,57 @@ const Button: React.FC<IButton> = (props) => {
     onDoubleClick = () => {},
     loading = false,
     className,
+    disabled,
+    icon,
   } = props;
 
   const CLS_PRE = 'my';
   const typeClass = ghost ? `${CLS_PRE}-single` : `${CLS_PRE}-${type}`;
 
+  const handClick = (
+    e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement, MouseEvent>,
+  ) => {
+    if (disabled || loading) {
+      e.preventDefault();
+      return;
+    }
+    (onClick as React.MouseEventHandler<HTMLDivElement | HTMLAnchorElement>)?.(
+      e,
+    );
+  };
+
+  const handleDoubleClick = (
+    e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement, MouseEvent>,
+  ) => {
+    if (disabled || loading) {
+      e.preventDefault();
+      return;
+    }
+    (
+      onDoubleClick as React.MouseEventHandler<
+        HTMLDivElement | HTMLAnchorElement
+      >
+    )?.(e);
+  };
+
   return (
     <div
-      className={c(`${CLS_PRE}-button`, className, typeClass)}
-      onClick={onClick}
-      onDoubleClick={onDoubleClick}
+      className={c(`${CLS_PRE}-button`, className, typeClass, {
+        ['disabled']: disabled,
+        ['loading']: loading,
+      })}
+      onClick={handClick}
+      onDoubleClick={handleDoubleClick}
     >
-      {loading && <LoadingSvg />}
+      {loading ? (
+        <div className={c(`${CLS_PRE}-loading-icon`)}>
+          <LoadingSvg />
+        </div>
+      ) : icon ? (
+        icon
+      ) : (
+        <></>
+      )}
       {children}
     </div>
   );

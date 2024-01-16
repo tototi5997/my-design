@@ -21,6 +21,15 @@
   & svg {
     width: 14px;
     height: 14px;
+  }
+}
+
+.@{prefix}-loading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
     animation: loading-cicrle 1s infinite linear;
   }
 }
@@ -33,11 +42,11 @@
   outline: 1px solid @black-10;
   background-color: @white-20;
 
-  &:active {
+  &:active:not(.disabled, .loading) {
     background-color: @white-10;
   }
 
-  &:hover {
+  &:hover:not(.disabled, .loading) {
     color: @primary-80;
     outline: 1px solid @primary-20;
   }
@@ -47,13 +56,20 @@
   background: @primary;
   color: @white;
 
-  &:hover {
+  &:hover:not(.disabled, .loading) {
     background-color: @primary-90;
   }
 
-  &:active {
+  &:active:not(.disabled, .loading) {
     background-color: @primary-80;
   }
+}
+
+.disabled {
+  outline: 1px solid @disabled-border;
+  color: @disabled-text;
+  background-color: @disabled-bg;
+  cursor: not-allowed;
 }
 
 @keyframes loading-cicrle {
