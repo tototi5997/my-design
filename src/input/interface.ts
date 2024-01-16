@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 type MyInputType =
   | 'text'
@@ -48,8 +48,20 @@ interface IInput {
    */
   style?: CSSProperties;
   /**
+   * @description 输入框前缀
+   */
+  prefix?: string | any;
+  /**
+   * @description 输入框后缀
+   */
+  suffix?: string | ReactNode;
+  /**
    * @description 输入变化回调
    */
-  onChange?: (value: string) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * @description 按下回车时的回调
+   */
+  onPressEnter?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 export default IInput;

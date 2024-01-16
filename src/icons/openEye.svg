@@ -1,0 +1,7 @@
+<svg width="16.67" height="16.67" xmlns="http://www.w3.org/2000/svg">
+  <!-- 眼睛轮廓 -->
+  <ellipse cx="8.335" cy="8.335" rx="6.667" ry="5" fill="white" stroke="#ccc" stroke-width="1" />
+
+  <!-- 眼球 -->
+  <circle cx="8.335" cy="8.335" r="2.5" fill="#ccc" />
+</svg>
