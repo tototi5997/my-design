@@ -20,4 +20,8 @@ title: Input
 常用类型有 text password checkbox radio number date 其中 submit reset 类型常用于表单中
 <code src="./demo/type.tsx" ></code>
 
+## 输入框前缀或者后缀
+
+<code src="./demo/affix.tsx" ></code>
+
 <API id="Input"></API>
