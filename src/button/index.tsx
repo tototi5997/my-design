@@ -2,51 +2,7 @@ import c from 'classnames';
 import React from 'react';
 import { ReactComponent as LoadingSvg } from '../icons/loading.svg';
 import './index.less';
-
-type IButtonType = 'primary' | 'single' | 'default' | 'circle';
-
-interface IButton {
-  /**
-   * @description 按钮类型
-   * @default "default"
-   */
-  type?: IButtonType;
-  /**
-   * @description 自定义类名
-   */
-  className?: string;
-  /**
-   * @description 子节点
-   */
-  children?: React.ReactNode;
-  /**
-   * @description 幽灵属性，使按钮背景透明
-   * @default false
-   */
-  ghost?: boolean;
-  /**
-   * @description 设置按钮载入状态
-   * @default false
-   */
-  loading?: boolean;
-  /**
-   * @description 点击按钮时的回调
-   */
-  onClick?: () => void;
-  /**
-   * @description 双击按钮时的回调
-   */
-  onDoubleClick?: () => void;
-  /**
-   * @description 是否禁用
-   * @default false
-   */
-  disabled?: boolean;
-  /**
-   * @description 按钮图标
-   */
-  icon?: React.ReactNode;
-}
+import { IButton } from './interface';
 
 const Button: React.FC<IButton> = (props) => {
   const {
@@ -64,6 +20,7 @@ const Button: React.FC<IButton> = (props) => {
   const CLS_PRE = 'my';
   const typeClass = ghost ? `${CLS_PRE}-single` : `${CLS_PRE}-${type}`;
 
+  // 单击
   const handClick = (
     e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement, MouseEvent>,
   ) => {
@@ -76,6 +33,7 @@ const Button: React.FC<IButton> = (props) => {
     );
   };
 
+  //双击
   const handleDoubleClick = (
     e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement, MouseEvent>,
   ) => {
@@ -90,6 +48,17 @@ const Button: React.FC<IButton> = (props) => {
     )?.(e);
   };
 
+  // 处理 loading , icon
+  const getBtnIcon = () => {
+    if (loading) {
+      return (
+        <div className={c(`${CLS_PRE}-loading-icon`)}>
+          <LoadingSvg />
+        </div>
+      );
+    } else return icon ? icon : <></>;
+  };
+
   return (
     <div
       className={c(`${CLS_PRE}-button`, className, typeClass, {
@@ -99,15 +68,7 @@ const Button: React.FC<IButton> = (props) => {
       onClick={handClick}
       onDoubleClick={handleDoubleClick}
     >
-      {loading ? (
-        <div className={c(`${CLS_PRE}-loading-icon`)}>
-          <LoadingSvg />
-        </div>
-      ) : icon ? (
-        icon
-      ) : (
-        <></>
-      )}
+      {getBtnIcon()}
       {children}
     </div>
   );
