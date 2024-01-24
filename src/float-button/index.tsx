@@ -1,14 +1,6 @@
-import c from 'classnames';
-import React from 'react';
-import { ReactComponent as Question } from '../icons/question.svg';
-import './index.less';
+import FloatButton from './float-button';
+import Group from './group';
 
-const FloatButton = () => {
-  return (
-    <div className={c('my-float-button')}>
-      <Question />
-    </div>
-  );
-};
+FloatButton.Group = Group;
 
 export default FloatButton;

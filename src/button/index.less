@@ -21,6 +21,8 @@
   & svg {
     width: 14px;
     height: 14px;
+    fill: black;
+    transition: all 0.3s;
   }
 }
 
@@ -49,6 +51,10 @@
   &:hover:not(.disabled, .loading) {
     color: @primary-80;
     outline: 1px solid @primary-20;
+
+    & svg {
+      fill: @primary-80;
+    }
   }
 }
 

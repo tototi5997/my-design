@@ -27,11 +27,15 @@ export interface IButton {
   /**
    * @description 点击按钮时的回调
    */
-  onClick?: () => void;
+  onClick?: (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+  ) => void;
   /**
    * @description 双击按钮时的回调
    */
-  onDoubleClick?: () => void;
+  onDoubleClick?: (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+  ) => void;
   /**
    * @description 是否禁用
    * @default false

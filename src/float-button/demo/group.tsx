@@ -4,9 +4,11 @@ import { ReactComponent as Top } from '../../icons/top.svg';
 
 const Demo = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', gap: 10 }}>
-      <FloatButton />
-      <FloatButton icon={<Top />} />
+    <div>
+      <FloatButton.Group>
+        <FloatButton />
+        <FloatButton icon={<Top />} />
+      </FloatButton.Group>
     </div>
   );
 };
