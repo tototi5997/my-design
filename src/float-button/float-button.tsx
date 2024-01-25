@@ -6,10 +6,18 @@ import { CompoundedComponent, IFloatButtonProps } from './interface';
 
 const FloatButton: React.FC<IFloatButtonProps> = (props) => {
   const CLS_PRE = 'my';
-  const { icon } = props;
+  const { type, icon, onClick } = props;
 
+  const handleClick = () => {
+    onClick?.();
+  };
   return (
-    <div className={c(`${CLS_PRE}-float-button`)}>{icon ?? <Question />}</div>
+    <div
+      className={c(`${CLS_PRE}-float-button`, `${CLS_PRE}-float-btn-${type}`)}
+      onClick={handleClick}
+    >
+      {icon ?? <Question />}
+    </div>
   );
 };
 

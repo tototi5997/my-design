@@ -5,6 +5,7 @@ export interface IFloatButtonGroup {
 }
 
 export interface IFloatButtonProps {
+  type?: 'primary' | 'default';
   icon?: React.ReactNode;
   onClick?: () => void;
 }

@@ -22,8 +22,32 @@
   }
 }
 
+.my-float-btn-primary {
+  background-color: @primary;
+
+  & svg {
+    fill: @white;
+  }
+
+  &:hover {
+    background-color: @primary-80;
+  }
+}
+
 .my-float-button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: max-content;
+
+  .my-float-child-btns {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    transform: translateY(-10px);
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }

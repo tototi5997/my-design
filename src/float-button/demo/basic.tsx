@@ -7,6 +7,7 @@ const Demo = () => {
     <div style={{ display: 'flex', flexDirection: 'row', gap: 10 }}>
       <FloatButton />
       <FloatButton icon={<Top />} />
+      <FloatButton type="primary" />
     </div>
   );
 };
